@@ -1,4 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-ReactDOM.render(<h1>Working</h1>, document.getElementById("app"));
+function ShowQuiz() {
+  return <h1>This is a quiz</h1>;
+}
+
+ReactDOM.render(<ShowQuiz />, document.getElementById("app"));

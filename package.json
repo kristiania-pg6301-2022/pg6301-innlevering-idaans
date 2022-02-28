@@ -10,7 +10,7 @@
     "build:server": "cd server && npm install",
     "format:check": "prettier --check **/*.{js,jsx,ts,tsx}",
     "format": "prettier --write **/*.{js,jsx,ts,tsx}",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prepare": "husky install"
   },
   "repository": {
@@ -25,7 +25,17 @@
   },
   "homepage": "https://github.com/kristiania-pg6301-2022/pg6301-innlevering-idaans#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-jest": "^27.5.1",
     "husky": "^7.0.4",
+    "jest": "^27.5.1",
     "prettier": "^2.5.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }
