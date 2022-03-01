@@ -1,12 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-export function ShowQuiz() {
-  return (
-    <>
-      <h1>Question</h1>
-    </>
-  );
-}
+import { ShowQuiz } from "./QuizApplication";
 
 ReactDOM.render(<ShowQuiz />, document.getElementById("app"));

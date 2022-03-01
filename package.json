@@ -10,7 +10,9 @@
     "build:server": "cd server && npm install",
     "format:check": "prettier --check **/*.{js,jsx,ts,tsx}",
     "format": "prettier --write **/*.{js,jsx,ts,tsx}",
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --collectCoverage",
+    "verify": "npm run prettier:check && npm run test:coverage",
     "prepare": "husky install"
   },
   "repository": {
@@ -35,14 +37,5 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
   }
 }
