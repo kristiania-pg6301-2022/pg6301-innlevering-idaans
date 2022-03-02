@@ -2,12 +2,14 @@
   "name": "pg6301-innlevering-idaans",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "cd server && npm start",
+    "dev": "concurrently npm:dev:client npm:dev:server",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
     "build": "npm run build:client && npm run build:server",
     "build:client": "cd client && npm install --include=dev && npm run build",
-    "build:server": "cd server && npm install",
+    "build:server": "cd server && npm run build",
     "format:check": "prettier --check **/*.{js,jsx,ts,tsx}",
     "format": "prettier --write **/*.{js,jsx,ts,tsx}",
     "test": "cd client && npm run verify",
@@ -35,6 +37,7 @@
     "prettier": "^2.5.1"
   },
   "dependencies": {
+    "concurrently": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
