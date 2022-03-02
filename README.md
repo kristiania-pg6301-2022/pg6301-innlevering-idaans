@@ -5,6 +5,6 @@
 * [x]  React Router
 * [x]  Jest
 * [x]  Github Actions
-* [ ]  Coveralls
+* [x]  Coveralls
 * [x]  Express
 * [ ]  Heroku
