@@ -7,4 +7,4 @@
 * [x]  Github Actions
 * [x]  Coveralls
 * [x]  Express
-* [ ]  Heroku
+* [x]  Heroku
