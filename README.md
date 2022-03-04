@@ -1,5 +1,8 @@
 ### Innlevering Webutvikling og API-design
 
+Heroku-app:
+https://tranquil-mountain-50539.herokuapp.com/newquiz
+
 * [x] Parcel
 * [x]  React
 * [x]  React Router
