@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel serve index.html",
+    "dev": "parcel watch index.html",
     "build": "npm install --include=dev && parcel build index.html",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "verify": "jest --collectCoverage"

@@ -10,8 +10,8 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get("/api/newquiz/random", (req, res, next) => {
-  const { id, category, question, answer } = randomQuestion();
-  res.json({ id, category, question, answer });
+  const { id, category, question, answers } = randomQuestion();
+  res.json({ id, category, question, answers });
 });
 
 app.post("/api/newquiz/answer", (req, res, answer) => {
@@ -30,7 +30,7 @@ app.post("/api/newquiz/answer", (req, res, answer) => {
 app.use(express.static("../client/dist"));
 
 app.use((req, res, next) => {
-  if (req.method === "GET" && !req.path.startsWith("/api")) {
+  if (req.method === "GET" && !req.path.startsWith("/api/")) {
     res.sendFile(path.resolve("../client/dist/index.html"));
   } else {
     next();

@@ -50,8 +50,9 @@ function QuestionComponent({ reload }) {
   const [question, setQuestion] = useState();
 
   async function handleLoadQuestion() {
-    const res = await fetch("/api/newquiz/random");
+    const res = await fetchJSON("/api/newquiz/random");
     setQuestion(await res.json());
+    console.log("KOMMER HIT");
   }
 
   function handleReload() {
@@ -66,7 +67,7 @@ function QuestionComponent({ reload }) {
       </div>
     );
   }
-  return <ShowQuestion question={question} onReload={handleReload()} />;
+  return <ShowQuestion question={question} onReload={handleReload} />;
 }
 
 export function QuizApp() {

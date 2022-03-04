@@ -1,6 +1,9 @@
 {
   "name": "pg6301-innlevering-idaans",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.13.0"
+  },
   "description": "",
   "scripts": {
     "start": "cd server && npm start",
