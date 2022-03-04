@@ -19,4 +19,5 @@
 
 ## Ikke implementert 
 * Cookies 
-* 
+* Score
+* Test

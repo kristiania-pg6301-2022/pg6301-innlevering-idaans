@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { isCorrectAnswer, Questions, randomQuestion } from "../server/question";
 import { useLoader } from "./useLoader";
 import { fetchJSON, postJSON } from "./http";
 
@@ -82,46 +81,6 @@ export function QuizApp() {
     </>
   );
 }
-
-function ShowAnswerStatus({ answer, onRestart, question }) {
-  return (
-    <>
-      <h1>{isCorrectAnswer(question, answer) ? "Right" : "Wrong"}</h1>
-      <p>
-        <button onClick={onRestart}>New question</button>
-      </p>
-    </>
-  );
-}
-
-/*export function Quiz() {
-  const [question, setQuestion] = useState(randomQuestion());
-  const [answer, setAnswer] = useState();
-
-  function handleRestart() {
-    setQuestion(randomQuestion());
-    setAnswer(undefined);
-  }
-
-  if (answer) {
-    return (
-      <ShowAnswerStatus
-        question={question}
-        answer={answer}
-        onRestart={handleRestart}
-      />
-    );
-  }
-
-  return (
-    <>
-      <ShowQuestion question={question} onAnswer={setAnswer} />
-      <Link to="/">
-        <button>Back to FrontPage</button>
-      </Link>
-    </>
-  );
-}*/
 
 export function Application() {
   return (
