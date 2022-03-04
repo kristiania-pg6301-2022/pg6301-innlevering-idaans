@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
-app.get("/api/newquiz/random", (req, res, next) => {
+app.get("/api/newquiz", (req, res, next) => {
   const { id, category, question, answers } = randomQuestion();
   res.json({ id, category, question, answers });
 });

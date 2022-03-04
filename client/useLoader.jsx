@@ -6,9 +6,8 @@ export function useLoader(loadFn) {
   const [error, setError] = useState();
 
   async function reload() {
-    setError(undefined);
-    setLoading(true);
     try {
+      setLoading(true);
       setData(await loadFn());
     } catch (error) {
       setError(error);

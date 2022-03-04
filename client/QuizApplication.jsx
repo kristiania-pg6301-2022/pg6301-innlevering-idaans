@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { isCorrectAnswer, randomQuestion } from "../server/question";
+import { isCorrectAnswer, Questions, randomQuestion } from "../server/question";
 import { useLoader } from "./useLoader";
 import { fetchJSON, postJSON } from "./http";
 
-/*export function ShowQuiz() {
+export function Frontpage() {
   return (
     <>
       <h1>Welcome to the quiz page</h1>
@@ -16,18 +16,10 @@ import { fetchJSON, postJSON } from "./http";
   );
 }
 
-export function Frontpage() {
-  return (
-    <>
-      <ShowQuiz />
-    </>
-  );
-}*/
-
 function ShowQuestion({ question, onReload }) {
   async function handleAnswer(answer) {
     const { id } = question;
-    postJSON("/api/newquiz/answer", { id, answer });
+    await postJSON("/api/newquiz/answer", { id, answer });
     onReload();
   }
   return (
@@ -50,8 +42,9 @@ function QuestionComponent({ reload }) {
   const [question, setQuestion] = useState();
 
   async function handleLoadQuestion() {
-    const res = await fetchJSON("/api/newquiz/random");
-    setQuestion(await res.json);
+    const res = await fetchJSON("/api/newquiz");
+    setQuestion(await res);
+    console.log(res);
     console.log("KOMMER HIT");
   }
 
@@ -71,9 +64,7 @@ function QuestionComponent({ reload }) {
 }
 
 export function QuizApp() {
-  const { loading, reload } = useLoader(async () =>
-    fetchJSON("/api/newquiz/random")
-  );
+  const { loading, reload } = useLoader(async () => fetchJSON("/api/newquiz"));
   return (
     <>
       <h1>Quiz</h1>
@@ -123,14 +114,14 @@ export function QuizApp() {
   );
 }*/
 
-/*export function Application() {
+export function Application() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Frontpage />} />
-        <Route path="/newquiz" element={<Quiz />} />
+        <Route path="/newquiz" element={<QuizApp />} />
         <Route path="/*" element={<h1>Not found</h1>} />
       </Routes>
     </BrowserRouter>
   );
-}*/
+}
