@@ -51,7 +51,7 @@ function QuestionComponent({ reload }) {
 
   async function handleLoadQuestion() {
     const res = await fetchJSON("/api/newquiz/random");
-    setQuestion(await res.json());
+    setQuestion(await res.json);
     console.log("KOMMER HIT");
   }
 
@@ -76,7 +76,7 @@ export function QuizApp() {
   );
   return (
     <>
-      <h1>Velkommen</h1>
+      <h1>Quiz</h1>
       {loading && <div>Loading...</div>}
       <QuestionComponent reload={reload} />
     </>

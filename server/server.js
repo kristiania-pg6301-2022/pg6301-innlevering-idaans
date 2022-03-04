@@ -27,7 +27,7 @@ app.post("/api/newquiz/answer", (req, res, answer) => {
   }
 });
 
-app.use(express.static("../client/dist"));
+app.use(express.static("../client/dist/"));
 
 app.use((req, res, next) => {
   if (req.method === "GET" && !req.path.startsWith("/api/")) {
