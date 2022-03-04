@@ -18,7 +18,7 @@ https://tranquil-mountain-50539.herokuapp.com/newquiz
 * Koblet frontend og backend 
 * Launch på Heroku 
 * Bruke reactrouter til å bruke applikasjonen
-* Får besvart spørsmål og generert nytt spørsmål, men får ikke tilbakemelding om dette er rett eller galt.
+* Får besvart spørsmål, generert nytt spørsmål, og vist om svar var rett eller galt.
 
 ## Ikke implementert 
 * Cookies 
