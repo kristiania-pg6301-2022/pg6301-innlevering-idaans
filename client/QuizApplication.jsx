@@ -29,9 +29,11 @@ function ShowQuestion({ question, onReload }) {
         .filter((a) => question.answers[a])
         .map((a) => (
           <p key={a}>
-            <button onClick={() => handleAnswer(a)}>
-              {question.answers[a]}
-            </button>
+            <Link to="/newquiz/answer">
+              <button onClick={() => handleAnswer(a)}>
+                {question.answers[a]}
+              </button>
+            </Link>
           </p>
         ))}
     </>
@@ -44,8 +46,6 @@ function QuestionComponent({ reload }) {
   async function handleLoadQuestion() {
     const res = await fetchJSON("/api/newquiz");
     setQuestion(await res);
-    console.log(res);
-    console.log("KOMMER HIT");
   }
 
   function handleReload() {

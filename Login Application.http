@@ -1,4 +1,4 @@
-POST {{server}}/api/newquiz/
+POST {{server}}/api/newquiz/answer
 
 ###
 GET {{server}}/api/newquiz/
