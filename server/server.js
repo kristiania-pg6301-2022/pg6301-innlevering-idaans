@@ -14,7 +14,7 @@ app.get("/api/newquiz", (req, res, next) => {
   res.json({ id, category, question, answers });
 });
 
-app.post("/api/newquiz/answer", (req, res, answer) => {
+app.post("/api/newquiz", (req, res, answer) => {
   const { id } = req.body;
   const question = Questions.find((q) => q.id === id);
   if (!question) {

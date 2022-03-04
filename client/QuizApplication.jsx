@@ -17,10 +17,19 @@ export function Frontpage() {
 }
 
 function ShowQuestion({ question, onReload }) {
-  async function handleAnswer(answer) {
+  const [result, setResult] = useState();
+  async function handleAnswer(answers) {
     const { id } = question;
-    await postJSON("/api/newquiz/answer", { id, answer });
-    onReload();
+    const { result } = await postJSON("/api/newquiz", { id, answers });
+    setResult(result);
+  }
+  if (result) {
+    return (
+      <div>
+        <p>your answer was {result}</p>
+        <button onClick={onReload}>Another question</button>
+      </div>
+    );
   }
   return (
     <>
@@ -29,7 +38,7 @@ function ShowQuestion({ question, onReload }) {
         .filter((a) => question.answers[a])
         .map((a) => (
           <p key={a}>
-            <Link to="/newquiz/answer">
+            <Link to="/newquiz">
               <button onClick={() => handleAnswer(a)}>
                 {question.answers[a]}
               </button>
@@ -74,7 +83,7 @@ export function QuizApp() {
   );
 }
 
-/*function ShowAnswerStatus({ answer, onRestart, question }) {
+function ShowAnswerStatus({ answer, onRestart, question }) {
   return (
     <>
       <h1>{isCorrectAnswer(question, answer) ? "Right" : "Wrong"}</h1>
@@ -83,7 +92,7 @@ export function QuizApp() {
       </p>
     </>
   );
-}*/
+}
 
 /*export function Quiz() {
   const [question, setQuestion] = useState(randomQuestion());

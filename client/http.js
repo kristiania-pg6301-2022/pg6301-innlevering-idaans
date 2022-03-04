@@ -23,4 +23,7 @@ export async function postJSON(url, json) {
   if (!res.ok) {
     throw new HttpError(res.status, res.statusText);
   }
+  if (res.ok) {
+    return res.json();
+  }
 }
