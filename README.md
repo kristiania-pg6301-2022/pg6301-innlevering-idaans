@@ -15,10 +15,7 @@
 * Koblet frontend og backend 
 * Launch på Heroku 
 * Bruke reactrouter til å bruke applikasjonen
-* Får besvart spørsmål og generert nytt spørsmål, men får ikke tilbakemelding om dette er rett eller galt. 
-
-## Fungerer ikke 
-* Får ikke besvart randon spørsmål, not found error.
+* Får besvart spørsmål og generert nytt spørsmål, men får ikke tilbakemelding om dette er rett eller galt.
 
 ## Ikke implementert 
 * Cookies 
